@@ -29,8 +29,8 @@ const App = () => {
     setStack([newIngredient, ...stack]); 
   }
 
-  function removeFromStack(id) {
-    const updatedStack = stack.filter((item) => item.id !== id);
+  function removeFromStack(name) {
+    const updatedStack = stack.filter((item) => item.name !== name);
     setStack(updatedStack);
   }
 
