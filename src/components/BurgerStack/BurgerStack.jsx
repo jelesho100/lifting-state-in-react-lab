@@ -4,10 +4,10 @@ const BurgerStack = ({ ingredients, removeFromStack }) => {
       <h2>Your Burger</h2>
       <ul>
         {ingredients.length === 0 && <li>No ingredients yet</li>}
-        {ingredients.map((ingredient) => (
-          <li key={ingredient.name}>
-            {ingredient.name}
-            <button onClick={() => removeFromStack(ingredient.name)}>-</button>
+        {ingredients.map((ingredient, index) => (
+          <li key={`${ingredient.name}-${ingredient.color}-${index}`}>
+            {ingredient.name} - {ingredient.color}
+            <button onClick={() => removeFromStack(index)}>-</button>
           </li>
         ))}
       </ul>

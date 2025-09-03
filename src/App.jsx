@@ -29,10 +29,9 @@ const App = () => {
     setStack([newIngredient, ...stack]); 
   }
 
-  function removeFromStack(name) {
-    const updatedStack = stack.filter((item) => item.name !== name);
-    setStack(updatedStack);
-  }
+  function removeFromStack(indexToDelete) {
+  setStack(prev => prev.filter((_, i) => i !== indexToDelete));
+}
 
   return (
     <main>

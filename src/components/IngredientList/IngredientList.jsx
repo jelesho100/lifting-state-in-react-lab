@@ -3,9 +3,9 @@ const IngredientList = ({ ingredients, addToStack }) => {
     <div>
       <h2>Available Ingredients</h2>
       <ul>
-        {ingredients.map((ingredient, index) => (
-          <li key={index}>
-            {ingredient.name}
+        {ingredients.map((ingredient) => (
+          <li key={`${ingredient.name} - ${ingredient.color}`}>
+            {ingredient.name} - {ingredient.color}
             <button onClick={() => addToStack(ingredient)}>+</button>
           </li>
         ))}
